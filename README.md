@@ -29,6 +29,11 @@ A Drupal module for rendering tabs
   $content = array(
     '#theme' => 'tabs2',
     '#tabs' => $tabs,
+    '#attributes_array' => array(),
+    '#menu_attributes_array' => array(),
+    '#settings' => array(
+      'collapsible' => TRUE,
+    ),
   );
   
   print drupal_render($content);
