@@ -1,0 +1,51 @@
+<?php
+
+
+/**
+ * Implements hook_views_api().
+ */
+function tabs2_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+/**
+ * Implements hook_library().
+ */
+function tabs2_library() {
+  $path = drupal_get_path('module', 'tabs2');
+
+  // Resources needed in the media browser itself.
+  return array(
+    'tabs' => array(
+      'title' => 'Tabs2',
+      'version' => '1.0',
+      'js' => array(
+        $path . '/js/tabs2.js'  => array('group' => JS_DEFAULT),
+      ),
+      'dependencies' => array(
+        array('system', 'ui.tabs'),
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tabs2_theme() {
+  return array(
+    'tabs2' => array(
+      'template' => 'tabs2',
+      'variables' => array(
+        'tabs' => array(),
+        'attributes_array' => array(),
+        'menu_attributes_array' => array(),
+        'settings' => array(),
+      ),
+      'file' => 'theme.inc',
+      'path' => drupal_get_path('module', 'tabs2') . '/theme',
+    ),
+  );
+}

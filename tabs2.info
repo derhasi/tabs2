@@ -1,0 +1,7 @@
+name = Tabs2
+description = Provide tabs component.
+package = Views
+core = 7.x
+version = 7.x-0.2
+
+files[] = plugins/tabs2_views_plugin_style_tabs.inc
